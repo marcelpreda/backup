@@ -1,8 +1,13 @@
-$backup_host = "nsa320"
-$backup_user = "backup"
-$src_path = @("D:\test_backup", "D:\kit", "D:\a.js", "D:\Workfolder test")
+$src_path = @(
+    "C:\Workfolder\yourpath...",
+    "C:\Users\$Env:USERNAME\Dropbox\PFA",
+    "C:\Workfolder\yourpath2...",
+    "C:\Workfolder\yourpath3...")
+$backup_host = "nas2"
+$backup_user = "backup2"
+
 $date = Get-Date -Format "yyyy_MM_dd__HH_mm_ss"
-$backup_dst_path = "/i-data/1201a80c/backup/$Env:USERNAME/$date"
+$backup_dst_path = "/mnt/backup/$Env:USERNAME/$date"
 
 
 ssh ${backup_user}@${backup_host} "mkdir -p $backup_dst_path"
